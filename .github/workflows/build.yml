@@ -130,7 +130,8 @@ jobs:
               gcc-${{ matrix.cc_version }}"$ARCH_SUFFIX" \
               g++-${{ matrix.cxx_version }}"$ARCH_SUFFIX"
 
-          pip3 install numpy
+          sudo apt-get install python3-numpy
+          # pip3 install numpy
 
       - name: Install build dependencies on macos
         if: steps.cache-build-result.outputs.cache-hit != 'true' && startsWith(matrix.os, 'macos')
